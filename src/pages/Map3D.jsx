@@ -25,13 +25,21 @@ const MAP_STYLE = {
       maxzoom: 14,
       attribution: '지형 © Mapzen / AWS Terrain Tiles',
     },
+    // 음영 전용 소스 (지형 소스와 분리해야 렌더링 품질이 좋아짐)
+    demShade: {
+      type: 'raster-dem',
+      tiles: ['https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png'],
+      encoding: 'terrarium',
+      tileSize: 256,
+      maxzoom: 14,
+    },
   },
   layers: [
     { id: 'satellite', type: 'raster', source: 'satellite' },
     {
       id: 'hillshade',
       type: 'hillshade',
-      source: 'dem',
+      source: 'demShade',
       paint: { 'hillshade-exaggeration': 0.35, 'hillshade-shadow-color': '#0b2a3f' },
     },
   ],
