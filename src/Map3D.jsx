@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import maplibregl from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
-import { LANDMARKS } from '../data/landmarks.js'
+import { LANDMARKS } from './data/landmarks.js'
 
 const JEJU_CENTER = [126.55, 33.38]
 const INITIAL_VIEW = { center: JEJU_CENTER, zoom: 9.4, pitch: 62, bearing: -18 }
@@ -210,7 +210,7 @@ export default function Map3D() {
   return (
     <section className="map-page">
       <aside className="map-side">
-        <h2>제주 3D 대표경관 지도</h2>
+        <h1>제주 3D 대표경관 지도</h1>
         <p className="map-help">
           마우스 <b>왼쪽 드래그</b> 이동 · <b>오른쪽 드래그</b>(또는 Ctrl+드래그) 회전·기울기 · <b>휠</b> 확대/축소.
           터치는 두 손가락으로 회전·확대합니다.
